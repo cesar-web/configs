@@ -1,0 +1,14 @@
+mod5 + w
+    qutebrowser
+
+mod5 + d
+    amenu -l
+
+mod5 + a
+    alacritty -e dash ~/code/bash/keybind/fuzzy-find-directory.sh
+
+mod5 + f
+    alacritty -e dash ~/code/bash/keybind/fuzzy-find-file.sh
+
+mod5 + c
+    alacritty
