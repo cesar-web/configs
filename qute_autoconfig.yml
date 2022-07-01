@@ -8,11 +8,31 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  bindings.commands:
+    global:
+      normal:
+        gp: open -p
   colors.webpage.darkmode.enabled:
     global: true
+  completion.cmd_history_max_items:
+    global: 0
+  completion.show:
+    global: always
+  completion.shrink:
+    global: true
+  content.mouse_lock:
+    https://www.gameflare.com: false
+  content.notifications.enabled:
+    https://1337x.to: false
   downloads.remove_finished:
     global: 1000
   hints.chars:
     global: asdfjkl
   tabs.last_close:
-    global: blank
+    global: startpage
+  url.default_page:
+    global: /home/cesar/.clone/startpage/index.html
+  url.start_pages:
+    global: /home/cesar/.clone/startpage/index.html
+  zoom.default:
+    global: 110%

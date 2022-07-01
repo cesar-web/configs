@@ -38,7 +38,7 @@ set showmatch " highlight matching braces
 set showmode " show insert / replace / visual mode
 set cursorline " highlight current line
 set wrap! " no line wrapping
-set scrolloff=20 " starts scrolling file when 20 away from end
+set scrolloff=25 " starts scrolling file when 20 away from end
 set splitbelow splitright " aligns new splits
 
 " Write settings
@@ -79,7 +79,7 @@ nnoremap k gk
 vnoremap k gk
 nnoremap gn gt
 nnoremap gN gT
-vnoremap <C-y> "+y
+vnoremap <C-y> :w !xclip -i -sel c<CR><CR>
 nnoremap <C-a> ggVG
 nnoremap <leader><leader> <Plug>LineLetters
 vnoremap <leader><leader> <Plug>LineLetters
@@ -150,7 +150,7 @@ nnoremap <leader>sle :set spelllang=en<CR>
 nnoremap <leader>sls :set spelllang=es<CR>
 
 " Notes and todo
-nnoremap <leader>gn :e ~/documents/notes<CR>
+nnoremap <leader>gn :e ~/documents/note<CR>
 nnoremap <leader>gt :e ~/documents/todo<CR>
 
 " Keep cursor centered while searching
@@ -197,17 +197,6 @@ nnoremap <leader>gr <Plug>(coc-references)
 " Light line color scheme
 let g:lightline={'colorscheme':'gruvbox',}
 
-" Nerd commenter settings
-nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDAltDelims_java = 1
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-let g:NERDToggleCheckAllLines = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
 " Undo tree settings
 nnoremap <leader>u :UndotreeToggle<cr><C-w>l
 let g:undotree_WindowLayout = 4
@@ -215,12 +204,11 @@ let g:undotree_SplitWidth = 45
 
 " LineLetters config
 let g:lineletters_settings = {
-      \ 'main_chars': ['a','s','d','f','j','k','l',';'],
-      \ 'prefix_chars': ['a','s','d','f','j','k','l',';'],
+      \ 'main_chars': ['a','s','d','f','j','k','l','m'],
+      \ 'prefix_chars': ['a','s','d','f','j','k','l','m'],
       \ 'highlight_group': 'MoreMsg',
       \ 'after_jump_do': '^zz'
       \ }
-
 
 " whichkey map list
 call which_key#register('<Space>', "g:which_key_map")
@@ -231,7 +219,6 @@ let g:which_key_map =  {}
 
 let g:which_key_map.a = 'Swap file'
 let g:which_key_map.c = 'Open terminal'
-let g:which_key_map.o = 'Fold code'
 let g:which_key_map.u = 'Undro Tree'
 
 let g:which_key_map.f = { 'name' : '+File-Fuzzy' }
@@ -272,8 +259,6 @@ let g:which_key_map.s.l.e = 'English'
 let g:which_key_map.s.l.s = 'Spanish'
 
 let g:which_key_map.t = { 'name' : "+Toggle" }
-let g:which_key_map.t.g = 'Goyo'
-let g:which_key_map.t.j = 'Journal'
 let g:which_key_map.t.p = 'Paste'
 let g:which_key_map.t.s = 'Spell'
 let g:which_key_map.t.w = 'Wrap'

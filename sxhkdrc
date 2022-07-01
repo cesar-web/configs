@@ -1,14 +1,28 @@
 mod5 + w
     qutebrowser
 
-mod5 + d
-    amenu -l
+mod5 + shift + w
+    qutebrowser ":open -p"
 
 mod5 + a
     alacritty -e dash ~/code/bash/keybind/fuzzy-find-directory.sh
+
+mod5 + s
+    alacritty -e alsamixer
+
+mod5 + d
+    alacritty -e dash ~/code/bash/keybind/fuzzy-software-launcher.sh
 
 mod5 + f
     alacritty -e dash ~/code/bash/keybind/fuzzy-find-file.sh
 
 mod5 + c
     alacritty
+
+
+alt + b; {1,2,3,4,5,6,7,8,9,0,minus}
+    xbacklight -set {5,10,20,30,40,50,60,70,80,90,100}
+
+alt + s
+    IMAGETIME=$(date "+%B%d%y_%I%M%S"); scrot -s "$IMAGETIME".png; xclip -selection clipboard -t image/png -i "$IMAGETIME".png; rm "$IMAGETIME".png
+
